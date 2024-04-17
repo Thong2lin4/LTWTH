@@ -1,0 +1,6 @@
+@LTW_Buoi1_HostAddress = http://localhost:5285
+
+GET {{LTW_Buoi1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

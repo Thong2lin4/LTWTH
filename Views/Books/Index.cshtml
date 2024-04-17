@@ -1,0 +1,83 @@
+﻿@model IEnumerable<LTW_Buoi1.Models.Domain.Books>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsRead)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateRead)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoverUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.publishers)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsRead)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRead)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoverUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.publishers.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
